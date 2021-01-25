@@ -1,23 +1,26 @@
 {
   "files": {
     "main.css": "/daily-organizinator/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/daily-organizinator/static/js/main.ee9b9a7e.chunk.js",
-    "main.js.map": "/daily-organizinator/static/js/main.ee9b9a7e.chunk.js.map",
-    "runtime-main.js": "/daily-organizinator/static/js/runtime-main.afedc486.js",
-    "runtime-main.js.map": "/daily-organizinator/static/js/runtime-main.afedc486.js.map",
-    "static/js/2.abcfdbe8.chunk.js": "/daily-organizinator/static/js/2.abcfdbe8.chunk.js",
-    "static/js/2.abcfdbe8.chunk.js.map": "/daily-organizinator/static/js/2.abcfdbe8.chunk.js.map",
-    "static/js/3.8f017bf0.chunk.js": "/daily-organizinator/static/js/3.8f017bf0.chunk.js",
-    "static/js/3.8f017bf0.chunk.js.map": "/daily-organizinator/static/js/3.8f017bf0.chunk.js.map",
+    "main.js": "/daily-organizinator/static/js/main.808ea34f.chunk.js",
+    "main.js.map": "/daily-organizinator/static/js/main.808ea34f.chunk.js.map",
+    "runtime-main.js": "/daily-organizinator/static/js/runtime-main.0e9af081.js",
+    "runtime-main.js.map": "/daily-organizinator/static/js/runtime-main.0e9af081.js.map",
+    "static/css/2.150d169a.chunk.css": "/daily-organizinator/static/css/2.150d169a.chunk.css",
+    "static/js/2.2ca4110a.chunk.js": "/daily-organizinator/static/js/2.2ca4110a.chunk.js",
+    "static/js/2.2ca4110a.chunk.js.map": "/daily-organizinator/static/js/2.2ca4110a.chunk.js.map",
+    "static/js/3.383c4124.chunk.js": "/daily-organizinator/static/js/3.383c4124.chunk.js",
+    "static/js/3.383c4124.chunk.js.map": "/daily-organizinator/static/js/3.383c4124.chunk.js.map",
     "index.html": "/daily-organizinator/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/daily-organizinator/static/css/2.150d169a.chunk.css.map",
     "static/css/main.8c8b27cf.chunk.css.map": "/daily-organizinator/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.abcfdbe8.chunk.js.LICENSE.txt": "/daily-organizinator/static/js/2.abcfdbe8.chunk.js.LICENSE.txt",
+    "static/js/2.2ca4110a.chunk.js.LICENSE.txt": "/daily-organizinator/static/js/2.2ca4110a.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/daily-organizinator/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.afedc486.js",
-    "static/js/2.abcfdbe8.chunk.js",
+    "static/js/runtime-main.0e9af081.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.2ca4110a.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.ee9b9a7e.chunk.js"
+    "static/js/main.808ea34f.chunk.js"
   ]
 }
