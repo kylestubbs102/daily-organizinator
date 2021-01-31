@@ -13,6 +13,7 @@ class Calendar extends Component {
         <FullCalendar 
             defaultView="dayGridMonth"
             allDaySlot={false}
+            expandRows={true}
             header={{
             left: "prev,next",
             center: "title",
