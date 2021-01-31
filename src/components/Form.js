@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DayOrganizer from './DayOrganizer'
 
 class Form extends Component {
     
@@ -48,7 +49,9 @@ class Form extends Component {
                 </select>
             </div>
             <button type="submit">Submit</button>
+            <DayOrganizer description = {this.state.eventDescription} day = {this.state.day} />
         </form>
+        
         )
     }
 }

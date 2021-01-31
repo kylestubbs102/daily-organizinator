@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
-import './App.css';
-import Form from './components/Form';
-import DayOrganizer from './components/DayOrganizer';
+import './App.css'
+import Form from './components/Form'
 
-class App extends Component {
-  render(){
+
+function App() {
     return (
-        <div className="App">
-            <DayOrganizer />
+        <div >
+            <Form />
         </div>
       )
-  }
 }
 
 export default App;

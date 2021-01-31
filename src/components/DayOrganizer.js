@@ -1,24 +1,16 @@
-import React, { Component } from 'react'
-import Form from './Form';
+import React from 'react'
 
-class DayOganizer extends Component {
-    
-    constructor(props) {
-        super (props)
-
-        this.state = {
-            eventDescription: '',
-            day: 'Monday'
-        }
-    }
-    render() {
-        return (
-         <div>
-             <Form />;
-            Day Organizer
-         </div>
-        )
-    }
+const DayOrganizer = (props) =>{
+    return (
+        <div>
+            <p>
+                {props.description}
+            </p>
+            <p>
+                {props.day}
+            </p>
+        </div>
+    )
 }
 
-export default DayOganizer
+export default DayOrganizer
