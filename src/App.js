@@ -1,27 +1,16 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from './components/Form';
+import DayOrganizer from './components/DayOrganizer';
 
-function App() {
-  return (
-        <Form>
-  <Form.Group controlId="formBasicEmail">
-    <Form.Label>Description</Form.Label>
-    <Form.Control placeholder="Enter Description" />
-  </Form.Group>
-
-  <Form.Group controlId="formBasicPassword">
-    <Form.Label>Day</Form.Label>
-    <Form.Control  placeholder="Enter day" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>    
-       
-  );
+class App extends Component {
+  render(){
+    return (
+        <div className="App">
+            <DayOrganizer />
+        </div>
+      )
+  }
 }
 
 export default App;
