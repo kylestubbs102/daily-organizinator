@@ -7,17 +7,29 @@ import Login from './components/Login'
 import Logout from  './components/Logout'
 
 class App extends Component {
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [name, setName] = useState()
-
+  
+  constructor(props){
+    super(props);
+    this.state = {
+      loggedIn: false,
+      name: ""
+      
+    }
+  }
   render(){
     
     return (
         <div className="App">
             <Form />
             <DayOrganizer />
+            <div style={{}}>
+        <Login loggedIn={this.loggedIn} setLoggedIn = {(bool) => setLoggedIn(bool)} setName={(name) => setName(name)}/>
+        {this.loggedIn ? <p>Hello {name}</p>: <p>Not logged in</p> }
+        <Logout loggedIn={this.loggedIn} setLoggedIn = {(bool) => setLoggedIn(bool)}/>
+      </div>
         </div>
-      )
+        
+      );
       
   }
 }
