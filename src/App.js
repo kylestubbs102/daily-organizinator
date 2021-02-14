@@ -6,9 +6,16 @@ import DayOrganizer from './components/DayOrganizer';
 import Login from './components/Login'
 import Logout from  './components/Logout'
 
+
 class App extends Component {
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [name, setName] = useState()
+  constructor(props) {
+    super (props);
+
+    this.state = {
+        loggedIn: false,
+        name: ""
+    }
+}
 
   render(){
     
