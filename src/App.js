@@ -5,6 +5,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import DayOrganizer from './components/DayOrganizer';
 import Login from './components/Login'
 import Logout from  './components/Logout'
+import Calendar from './components/Calendar';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     
     return (
         <div className="App">
+            <Calendar />
             <Form />
             <DayOrganizer />
           <div style={{}}>
