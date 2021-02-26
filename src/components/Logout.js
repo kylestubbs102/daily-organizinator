@@ -10,6 +10,7 @@ function Logout(props) {
     console.log('Logout made successfully');
     alert('Logout made successfully ✌');
     props.setLoggedIn(false);
+    props.setGoogleObj(null)
   };
 
   return (

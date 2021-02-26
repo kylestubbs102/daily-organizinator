@@ -1,81 +1,49 @@
-import React, { Component } from 'react'
+//import React, { Component } from 'react'
 //import DayOrganizer from './DayOrganizer'
+import React, { useState } from 'react'
 
-export default class Form extends Component {
+import database from '../firebase'
+
+function Form (props) {
     
-    userData;
+    const [eventDescription, setEventDescription] = useState('')
+    const [day, setDay] = useState('')
+    const [time, setTime] = useState('')
 
-    constructor(props) {
-        super (props);
-
-        this.handleEventChange = this.handleEventChange.bind(this);
-        this.handleDayChange = this.handleDayChange.bind(this);
-        this.handleTimeChange = this.handleTimeChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-
-        this.state = {
-            eventDescription: '',
-            day: 'Monday',
-            time: ''
-        }
+    const handleEventChange = (event) => {
+        setEventDescription(event.target.value);
     }
 
-    handleEventChange(event) {
-        this.setState({
-            eventDescription: event.target.value
-        })
+    const handleTimeChange = (event) => {
+        setTime(event.target.value);
     }
 
-    handleTimeChange(event) {
-        this.setState({
-            time: event.target.value
-        })
+    const handleDayChange = (event) => {
+        setDay(event.target.value);
     }
 
-    handleDayChange(event) {
-        this.setState({
-            day: event.target.value
-        })
+    const saveToDb = () => {
+        console.log(props.googleObj.googleId)
+        database.ref(`/users/${props.googleObj.googleId}/events`).push(
+            {
+                eventDescription: eventDescription,
+                day: day,
+                time: time
+            }
+        )
     }
 
-     // React Life Cycle
-     componentDidMount() {
-        this.userData = JSON.parse(localStorage.getItem('user'));
-
-        if (localStorage.getItem('user')) {
-            this.setState({
-                eventDescription: this.userData.eventDescription,
-                day: this.userData.day,
-                time: this.userData.time
-            })
-        } else {
-            this.setState({
-                eventDescription: '',
-                day: 'Monday',
-                time: '00:00'
-            })
-        }
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-        localStorage.setItem('user', JSON.stringify(nextState));
-    }
-
-    handleSubmit(){
-    }
-
-    render() {
-        return (
+    return (
         <div className="container">
-            <form onSubmit = {this.handleSubmit}> 
+            <form> 
                 <div>
                     <label>Event Description</label>
-                    <textarea className="form-control" value = {this.state.eventDescription} 
-                    onChange={this.handleEventChange}/>
+                    <textarea className="form-control" value = {eventDescription} 
+                    onChange={handleEventChange}/>
                 </div>
                 <div>
                     <label>Day</label>
-                    <select className="form-control" value = {this.state.day} onChange = {this.handleDayChange}>
+                    <select className="form-control" value = {day} onChange = {handleDayChange}>
                         <option value = "Monday">Monday</option>
                         <option value = "Tuesday">Tuesday</option>
                         <option value = "Wedensday">Wedensday</option>
@@ -87,7 +55,7 @@ export default class Form extends Component {
                 </div>
                 <div>
                     <label>Time</label>
-                    <select className="form-control" value = {this.state.time} onChange = {this.handleTimeChange}>
+                    <select className="form-control" value = {time} onChange = {handleTimeChange}>
                         <option value = "00:00">12:00am</option>
                         <option value = "00:30">12:30am</option>
                         <option value = "01:00">1:00am</option>
@@ -138,9 +106,11 @@ export default class Form extends Component {
                         <option value = "23:30">11:30pm</option>
                     </select>
                 </div>
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
             </form>
+            <button onClick={() => saveToDb()}>Submit</button>
         </div>
         )
-    }
+    
 }
+
+export default Form
