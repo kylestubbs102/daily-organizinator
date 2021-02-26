@@ -38,9 +38,11 @@ class Calendar extends Component {
   handleDateClick = (arg) => {
     this.setState({
       calendarEvents: this.state.calendarEvents.concat({
-        title: "New Event",
+        title: arg.startTime,
         start: arg.date,
-        end: arg.date
+        end: arg.date,
+        startTime: arg.startTime,
+        endTime: arg.endTime
       })
     })
   }
