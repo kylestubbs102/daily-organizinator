@@ -10,7 +10,7 @@ class Calendar extends Component {
 
   state = {
     calendarEvents: [
-      { title: 'Event Now', start: new Date() }
+      { title: 'Event Title', start: null }
     ]
   }
 
@@ -36,13 +36,15 @@ class Calendar extends Component {
   }
 
   handleDateClick = (arg) => {
+    var date1 = new Date('February 27, 2021 16:24:00')
+    var date2 = new Date('February 27, 2021 18:24:00')
+    console.log(arg.date)
     this.setState({
       calendarEvents: this.state.calendarEvents.concat({
-        title: arg.startTime,
-        start: arg.date,
-        end: arg.date,
-        startTime: arg.startTime,
-        endTime: arg.endTime
+        // title: arg.startTime,
+        title: 'Title',
+        start: date1,
+        end: date2,
       })
     })
   }
