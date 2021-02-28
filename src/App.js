@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import './App.css';
 import Form from './components/Form';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import DayOrganizer from './components/DayOrganizer';
 import Login from './components/Login'
 import Logout from  './components/Logout'
 import Calendar from './components/Calendar';
@@ -20,9 +19,16 @@ function App() {
             {loggedIn ? <p>Hello {name}</p>: <p>Not logged in</p> }
             <Logout loggedIn={loggedIn} setLoggedIn = {(bool) => setLoggedIn(bool)} setGoogleObj={(obj) => setGoogleObj(obj)}/>
           </div>
-          <Calendar />
           <Form googleObj = {googleObj}/>
+          {googleObj ? 
+          <div>
+            <div className="calendar">
+              <Calendar googleObj = {googleObj}/>
+            </div>
+          </div>
+          :null}
         </div>
+        
         
       );
       

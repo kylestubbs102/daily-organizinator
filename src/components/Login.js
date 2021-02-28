@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-
 import { GoogleLogin } from 'react-google-login';
 // refresh token
 import { refreshTokenSetup } from '../utils/refreshTokens';
