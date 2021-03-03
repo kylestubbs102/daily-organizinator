@@ -32,8 +32,6 @@ function Form (props) {
     }
 
     const saveToDb = () => {
-        console.log(props.googleObj.googleId)
-        console.log(day)
         database.ref(`/users/${props.googleObj.googleId}/events`).push(
             {
                 eventDescription: eventDescription,
@@ -42,6 +40,9 @@ function Form (props) {
                 endTime: endTime
             }
         )
+    }
+    const deleteDb = () => {
+        database.ref(`/users/${props.googleObj.googleId}/events`).remove()
     }
 
     return (
@@ -171,6 +172,7 @@ function Form (props) {
                 </div>
             </form>
             <button onClick={() => saveToDb()}>Submit</button>
+            <button onClick={() => deleteDb()}>Clear All Events</button>
         </div>
         )
     
