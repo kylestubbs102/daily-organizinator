@@ -3,11 +3,15 @@
 import React, { useState } from 'react'
 
 import database from '../firebase'
+import DatePicker from 'react-datepicker';
+ 
+import "react-datepicker/dist/react-datepicker.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Form (props) {
     
     const [eventDescription, setEventDescription] = useState('')
-    const [day, setDay] = useState('')
+    const [day, setDay] = useState(new Date())
     const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
 
@@ -24,15 +28,16 @@ function Form (props) {
     }
 
     const handleDayChange = (event) => {
-        setDay(event.target.value);
+        setDay(event);
     }
 
     const saveToDb = () => {
         console.log(props.googleObj.googleId)
+        console.log(day)
         database.ref(`/users/${props.googleObj.googleId}/events`).push(
             {
                 eventDescription: eventDescription,
-                day: day,
+                day: String(day),
                 startTime: startTime,
                 endTime: endTime
             }
@@ -49,15 +54,14 @@ function Form (props) {
                 </div>
                 <div>
                     <label>Day</label>
-                    <select className="form-control" value = {day} onChange = {handleDayChange}>
-                        <option value = "Monday">Monday</option>
-                        <option value = "Tuesday">Tuesday</option>
-                        <option value = "Wedensday">Wedensday</option>
-                        <option value = "Thursday">Thursday</option>
-                        <option value = "Friday">Friday</option>
-                        <option value = "Saturday">Saturday</option>
-                        <option value = "Sunday">Sunday</option>
-                    </select>
+                    <div>
+                        <DatePicker
+                            selected={ day }
+                            onChange={ handleDayChange }
+                            name="day"
+                            dateFormat="MM/dd/yyyy"
+                        />
+                    </div>
                 </div>
                 <div>
                     <label>Start Time</label>
