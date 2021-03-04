@@ -1,3 +1,22 @@
 .fc {
-    padding: 30px;
+  padding: 30px;
+}
+
+.calendar {
+  position: relative;
+  z-index: 0;
+}
+
+.event-button {
+  position: absolute;
+  top: 95px;
+  left: 310px;
+  z-index: 1;
+}
+
+.clear-button {
+  position: absolute;
+  top: 95px;
+  right: 220px;
+  z-index: 1;
 }

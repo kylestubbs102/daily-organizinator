@@ -1,0 +1,12 @@
+.oAuth {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.oAuth-button {
+  position: absolute;
+  top: 20px;
+  right: 32px;
+}
